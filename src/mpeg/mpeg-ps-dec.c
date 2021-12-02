@@ -4,10 +4,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <mpeg-ps.h>
-#include <mpeg-ps-proto.h>
-#include <mpeg-ts-proto.h>
-#include <mpeg-pes-proto.h>
+#include "../../include/impl/mpeg/detail/mpeg-ps.h"
+#include "../../include/impl/mpeg/detail/mpeg-ps-proto.h"
+#include "../../include/impl/mpeg/detail/mpeg-ts-proto.h"
+#include "../../include/impl/mpeg/detail/mpeg-pes-proto.h"
 #include <assert.h>
 #include <string.h>
 

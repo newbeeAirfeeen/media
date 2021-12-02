@@ -1,4 +1,4 @@
-#include <mpeg-ps-proto.h>
+#include "../../include/impl/mpeg/detail/mpeg-ps-proto.h"
 #include "mpeg-util.h"
 #include <assert.h>
 

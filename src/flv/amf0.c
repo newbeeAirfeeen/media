@@ -1,4 +1,4 @@
-#include "amf0.h"
+#include "../../include/impl/flv/detail/amf0.h"
 #include <stddef.h>
 #include <string.h>
 #include <assert.h>

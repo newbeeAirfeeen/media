@@ -1,18 +1,18 @@
-#include <flv-muxer.h>
-#include <flv-proto.h>
-#include <flv-header.h>
-#include <amf0.h>
+#include "../../include/impl/flv/detail/flv-muxer.h"
+#include "../../include/impl/flv/detail/flv-proto.h"
+#include "../../include/impl/flv/detail/flv-header.h"
+#include "../../include/impl/flv/detail/amf0.h"
 #include <stdio.h>
 #include <errno.h>
 #include <stdlib.h>
 #include <assert.h>
 #include <stdint.h>
 #include <string.h>
-#include <mpeg4-aac.h>
-#include <mpeg4-avc.h>
-#include <mpeg4-hevc.h>
-#include <mp3-header.h>
-#include <opus-head.h>
+#include "../../include/impl/flv/detail/mpeg4-aac.h"
+#include "../../include/impl/flv/detail/mpeg4-avc.h"
+#include "../../include/impl/flv/detail/mpeg4-hevc.h"
+#include "../../include/impl/flv/detail/mp3-header.h"
+#include "../../include/impl/flv/detail/opus-head.h"
 
 #define FLV_MUXER "libflv"
 

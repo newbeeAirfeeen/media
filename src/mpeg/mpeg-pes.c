@@ -2,7 +2,7 @@
 // Information technology - Generic coding of moving pictures and associated audio information: Systems
 // 2.4.3.6 PES packet(p51)
 
-#include <mpeg-pes-proto.h>
+#include "../../include/impl/mpeg/detail/mpeg-pes-proto.h"
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>

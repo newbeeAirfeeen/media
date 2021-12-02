@@ -1,4 +1,4 @@
-#include <mpeg-types.h>
+#include "../../include/impl/mpeg/detail/mpeg-types.h"
 #include "mpeg-util.h"
 #include <assert.h>
 #include <string.h>

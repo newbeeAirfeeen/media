@@ -1,5 +1,5 @@
-#include <mpeg4-hevc.h>
-#include <mpeg4-avc.h>
+#include "../../include/impl/flv/detail/mpeg4-hevc.h"
+#include "../../include/impl/flv/detail/mpeg4-avc.h"
 #include <string.h>
 #include <assert.h>
 

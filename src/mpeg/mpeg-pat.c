@@ -2,7 +2,7 @@
 // Information technology - Generic coding of moving pictures and associated audio information: Systems
 // 2.4.4.3 Program association table(p65)
 
-#include <mpeg-ts-proto.h>
+#include "../../include/impl/mpeg/detail/mpeg-ts-proto.h"
 #include "mpeg-util.h"
 #include <stdlib.h>
 #include <string.h>

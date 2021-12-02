@@ -1,6 +1,6 @@
-#include <flv-parser.h>
-#include <flv-header.h>
-#include <flv-proto.h>
+#include "../../include/impl/flv/detail/flv-parser.h"
+#include "../../include/impl/flv/detail/flv-header.h"
+#include "../../include/impl/flv/detail/flv-proto.h"
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>

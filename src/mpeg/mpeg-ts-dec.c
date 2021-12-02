@@ -2,11 +2,11 @@
 // Information technology - Generic coding of moving pictures and associated audio information: Systems
 // 2.4.3.1 Transport stream(p34)
 
-#include <mpeg-ts-proto.h>
-#include <mpeg-ps-proto.h>
-#include <mpeg-pes-proto.h>
+#include "../../include/impl/mpeg/detail/mpeg-ts-proto.h"
+#include "../../include/impl/mpeg/detail/mpeg-ps-proto.h"
+#include "../../include/impl/mpeg/detail/mpeg-pes-proto.h"
 #include "mpeg-util.h"
-#include <mpeg-ts.h>
+#include "../../include/impl/mpeg/detail/mpeg-ts.h"
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
