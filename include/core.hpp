@@ -17,9 +17,10 @@ enum code_type{
 
 struct context{
     code_type codec_type;
-    int time_base;
-    int64_t dts;
-    int64_t pts;
+    uint32_t time_base;
+    int64_t  dts;
+    int64_t  pts;
 };
+
 using exception_handler_type = std::function<void(const std::logic_error& e)>;
 #endif //MEDIA_CORE_H

@@ -9,8 +9,8 @@
 #include <impl/flv/detail/flv-muxer.h>
 #include <impl/flv/detail/flv-writer.h>
 #include <impl/flv/detail/flv-header.h>
-
-struct flv_muxer::impl{
+template<typename T>
+struct flv_muxer<T>::impl{
 public:
     using native_handle_type = int;
     static constexpr const int time_base = 1000;
@@ -32,12 +32,16 @@ public:
                 case H264_AnnexB:
                 case H264_AVC:
                     ret = flv_muxer_avc(m_muxer, data, len, pts, dts);
+                    break;
                 case H265:
                     ret = flv_muxer_hevc(m_muxer, data, len, pts, dts);
+                    break;
                 case MP3:
                     ret = flv_muxer_mp3(m_muxer, data, len, pts, dts);
+                    break;
                 case AAC_ADTS:
                     ret = flv_muxer_aac(m_muxer, data, len, pts, dts);
+                    break;
                 default:throw std::logic_error("flv复用器不支持当前编码类型或当前版本不支持");
             }
         }catch(const std::logic_error& e){
@@ -84,6 +88,7 @@ private:
         header[4] = ((has_audio ? 1 : 0) << 2) | (has_video ? 1 : 0);
         header[8] = 9;
         header_func(version, has_video, has_audio, header, 13);
+        header_written = true;
     }
     void write_tag(int type, const void* data, size_t bytes, uint32_t timestamp){
         char buf[FLV_TAG_HEADER_LENGTH + FLV_PREVIOUS_TAG_LENGTH] = {0};
@@ -96,10 +101,10 @@ private:
         native_handle_type ret = flv_tag_header_write(&tag, (uint8_t*)buf, FLV_TAG_HEADER_LENGTH);
         if( ret < 0)throw std::logic_error("flv写入tag头失败");
 
-        ret = flv_tag_size_write((uint8_t*)buf + FLV_PREVIOUS_TAG_LENGTH, 4,
+        ret = flv_tag_size_write((uint8_t*)buf + FLV_TAG_HEADER_LENGTH, 4,
                                  (uint32_t)bytes + FLV_TAG_HEADER_LENGTH);
         if( ret < 0)throw std::logic_error("flv tag size写入失败");
-        std::string tag_buf(sizeof(buf) + bytes, 0);
+        std::string tag_buf;
         /* write tag_header */
         tag_buf.append(buf, FLV_TAG_HEADER_LENGTH);
         /* write tag body */
@@ -125,28 +130,35 @@ private:
 };
 
 
-flv_muxer::flv_muxer(bool video, bool audio):impl_ptr(nullptr){
+template<typename Policy>
+flv_muxer<Policy>::flv_muxer(bool video, bool audio):impl_ptr(nullptr){
     this->impl_ptr = new impl(video, audio);
 }
 
-flv_muxer::~flv_muxer(){
+template<typename Policy>
+flv_muxer<Policy>::~flv_muxer(){
     if(impl_ptr)delete impl_ptr;
 }
 
-void flv_muxer::encode(const context& _context, const char* data, size_t len){
-    impl_ptr->encode(_context, data, len);
+template<typename Policy>
+void flv_muxer<Policy>::encode(const context& _context, const char* data, size_t len){
+    context _revise_context = _context;
+    p.operator()(_revise_context.time_base, std::ref(_revise_context.dts), std::ref(_revise_context.pts));
+    impl_ptr->encode(_revise_context, data, len);
 }
 
-void flv_muxer::set_exception_handler(exception_handler_type exception_handler){
+template<typename Policy>
+void flv_muxer<Policy>::set_exception_handler(exception_handler_type exception_handler){
     impl_ptr -> set_exception_handler(std::move(exception_handler));
 }
 
-
-void flv_muxer::on_flv_header(on_flv_header_func f){
+template<typename Policy>
+void flv_muxer<Policy>::flv_muxer::on_flv_header(on_flv_header_func f){
     impl_ptr -> on_flv_header(std::move(f));
 }
 
-void flv_muxer::on_tag(on_flv_tag_func f){
+template<typename Policy>
+void flv_muxer<Policy>::on_tag(on_flv_tag_func f){
     impl_ptr -> on_tag(std::move(f));
 }
 

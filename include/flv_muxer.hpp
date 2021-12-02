@@ -6,9 +6,11 @@
 #define MEDIA_BASIC_MUXER_HPP
 #include <core.hpp>
 #include <flv.hpp>
+template<typename policy>
 class flv_muxer{
 public:
     struct impl;
+    using muxer_policy = policy;
 public:
 
     flv_muxer(bool video, bool audio);
@@ -30,5 +32,6 @@ public:
 
 private:
     impl* impl_ptr;
+    muxer_policy p;
 };
 #endif //MEDIA_BASIC_MUXER_HPP
