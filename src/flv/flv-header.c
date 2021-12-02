@@ -1,5 +1,5 @@
-#include "../../include/impl/flv/detail/flv-header.h"
-#include "../../include/impl/flv/detail/flv-proto.h"
+#include <impl/flv/detail/flv-header.h>
+#include <impl/flv/detail/flv-proto.h>
 #include <assert.h>
 #include <errno.h>
 

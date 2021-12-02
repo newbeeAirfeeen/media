@@ -1,6 +1,6 @@
-#include "../../include/impl/mpeg/detail/mpeg-pes-proto.h"
-#include "../../include/impl/mpeg/detail/mpeg-ts-proto.h"
-#include "mpeg-util.h"
+#include <impl/mpeg/detail/mpeg-pes-proto.h>
+#include <impl/mpeg/detail/mpeg-ts-proto.h>
+#include <impl/mpeg/detail/mpeg-util.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>

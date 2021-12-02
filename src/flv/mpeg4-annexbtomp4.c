@@ -5,7 +5,7 @@
 //    shall be added before NAL unit.The size of this field is defined in DecoderSpecificInfo.
 // 2. It is recommended encapsulating one NAL unit in one SL packet when it is delivered over lossy environment.
 
-#include "../../include/impl/flv/detail/mpeg4-avc.h"
+#include <impl/flv/detail/mpeg4-avc.h>
 #include <string.h>
 #include <assert.h>
 #include <stdint.h>

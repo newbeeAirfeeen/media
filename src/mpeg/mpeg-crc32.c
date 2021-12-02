@@ -1,4 +1,4 @@
-#include "mpeg-util.h"
+#include <impl/mpeg/detail/mpeg-util.h>
 
 static uint32_t crc32table[256] = {
 	0x00000000, 0xB71DC104, 0x6E3B8209, 0xD926430D, 0xDC760413, 0x6B6BC517,

@@ -1,7 +1,7 @@
 // ISO/IEC 14496-1:2010(E)
 // Annex I: Usage of ITU-T Recommendation H.264 | ISO/IEC 14496-10 AVC (p150)
 
-#include "../../include/impl/flv/detail/mpeg4-avc.h"
+#include <impl/flv/detail/mpeg4-avc.h>
 #include <string.h>
 #include <assert.h>
 #include <stdint.h>

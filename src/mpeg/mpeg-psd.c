@@ -2,7 +2,7 @@
 // Information technology - Generic coding of moving pictures and associated audio information: Systems
 // 2.5.5 Program stream directory(p84)
 
-#include "../../include/impl/mpeg/detail/mpeg-ps-proto.h"
+#include <impl/mpeg/detail/mpeg-ps-proto.h>
 #include <assert.h>
 
 size_t psd_read(struct psd_t *psd, const uint8_t* data, size_t bytes)

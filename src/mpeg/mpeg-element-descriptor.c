@@ -2,9 +2,9 @@
 // Information technology - Generic coding of moving pictures and associated audio information: Systems
 // 2.6 Program and program element descriptors(p83)
 
-#include "../../include/impl/mpeg/detail/mpeg-ps-proto.h"
-#include "../../include/impl/mpeg/detail/mpeg-element-descriptor.h"
-#include "mpeg-util.h"
+#include <impl/mpeg/detail/mpeg-ps-proto.h>
+#include <impl/mpeg/detail/mpeg-element-descriptor.h>
+#include <impl/mpeg/detail/mpeg-util.h>
 #include <string.h>
 #include <assert.h>
 

@@ -1,4 +1,4 @@
-#include "../../include/impl/flv/detail/webm-vpx.h"
+#include <impl/flv/detail/webm-vpx.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>

@@ -1,4 +1,4 @@
-#include "../../include/impl/flv/detail/mpeg4-hevc.h"
+#include <impl/flv/detail/mpeg4-hevc.h>
 #include <string.h>
 #include <assert.h>
 

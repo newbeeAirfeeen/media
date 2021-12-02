@@ -1,5 +1,5 @@
-#include "../../include/impl/flv/detail/mpeg4-aac.h"
-#include "../../include/impl/flv/detail/mpeg4-bits.h"
+#include <impl/flv/detail/mpeg4-aac.h>
+#include <impl/flv/detail/mpeg4-bits.h>
 #include "assert.h"
 #include <assert.h>
 #include <stdlib.h>

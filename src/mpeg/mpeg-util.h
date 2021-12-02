@@ -1,7 +1,7 @@
 #ifndef _mpeg_util_h_
 #define _mpeg_util_h_
 
-#include "../../include/impl/mpeg/detail/mpeg-types.h"
+#include <impl/mpeg/detail/mpeg-types.h>
 
 struct mpeg_bits_t
 {

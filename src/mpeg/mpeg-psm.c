@@ -2,10 +2,10 @@
 // Information technology - Generic coding of moving pictures and associated audio information: Systems
 // 2.5.4 Program stream map(p82)
 
-#include "../../include/impl/mpeg/detail/mpeg-ps-proto.h"
-#include "../../include/impl/mpeg/detail/mpeg-pes-proto.h"
-#include "../../include/impl/mpeg/detail/mpeg-element-descriptor.h"
-#include "mpeg-util.h"
+#include <impl/mpeg/detail/mpeg-ps-proto.h>
+#include <impl/mpeg/detail/mpeg-pes-proto.h>
+#include <impl/mpeg/detail/mpeg-element-descriptor.h>
+#include <impl/mpeg/detail/mpeg-util.h>
 #include <assert.h>
 #include <string.h>
 

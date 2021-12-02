@@ -1,5 +1,5 @@
-#include "../../include/impl/flv/detail/flv-demuxer.h"
-#include "../../include/impl/flv/detail/amf0.h"
+#include <impl/flv/detail/flv-demuxer.h>
+#include <impl/flv/detail/amf0.h>
 #include <errno.h>
 #include <assert.h>
 #include <string.h>

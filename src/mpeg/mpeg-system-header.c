@@ -1,5 +1,5 @@
-#include "../../include/impl/mpeg/detail/mpeg-ps-proto.h"
-#include "mpeg-util.h"
+#include <impl/mpeg/detail/mpeg-ps-proto.h>
+#include <impl/mpeg/detail/mpeg-util.h>
 #include <assert.h>
 
 // 2.5.3.5 System header (p79)

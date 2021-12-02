@@ -1,5 +1,5 @@
-#include "../../include/impl/mpeg/detail/mpeg-ts-proto.h"
-#include "mpeg-util.h"
+#include <impl/mpeg/detail/mpeg-ts-proto.h>
+#include <impl/mpeg/detail/mpeg-util.h>
 
 void pcr_write(uint8_t *ptr, int64_t pcr)
 {
